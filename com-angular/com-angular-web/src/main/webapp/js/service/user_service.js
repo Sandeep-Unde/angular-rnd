@@ -2,13 +2,14 @@
 
 angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $q){
 
-    var REST_SERVICE_URI = 'http://localhost:9090/com-angular-web/user/';
+    var REST_SERVICE_URI = 'http://localhost:8080/com-angular-web/user/';
 
     var factory = {
         fetchAllUsers: fetchAllUsers,
         createUser: createUser,
         updateUser:updateUser,
-        deleteUser:deleteUser
+        deleteUser:deleteUser,
+        userList:userList
     };
 
     return factory;
@@ -36,7 +37,6 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
                 deferred.resolve(response.data);
             },
             function(errResponse){
-            	alert(errResponse);
                 console.error('Error while creating User');
                 deferred.reject(errResponse);
             }
@@ -73,6 +73,10 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
             }
         );
         return deferred.promise;
+    }
+    
+    function userList(){
+    	window.location.href = 'http://localhost:8080/com-angular-web/list';
     }
 
 }]);

@@ -73,13 +73,14 @@
                           <div class="form-actions floatRight">
                               <input type="submit"  value="{{!ctrl.user.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
                               <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
+                              <button type="button" ng-click="ctrl.listUser()" class="btn btn-warning btn-sm">User List</button>
                           </div>
                       </div>
                   </form>
               </div>
           </div>
-          <div class="panel panel-default">
-                <!-- Default panel contents -->
+          <<!-- div class="panel panel-default">
+                Default panel contents
               <div class="panel-heading"><span class="lead">List of Users </span></div>
               <div class="tablecontainer">
                   <table class="table table-hover">
@@ -105,7 +106,7 @@
                       </tbody>
                   </table>
               </div>
-          </div>
+          </div> -->
       </div>
       
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>

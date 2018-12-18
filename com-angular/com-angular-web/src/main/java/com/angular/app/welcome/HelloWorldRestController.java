@@ -123,5 +123,17 @@ public class HelloWorldRestController {
         userService.deleteAllUsers();
         return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
     }
+    
+    @RequestMapping(value="/userList", method = RequestMethod.GET)
+    public ResponseEntity<List<User>> showuserList(UriComponentsBuilder ucBuilder) {
+    	List<User> users = userService.findAllUsers();
+        if(users.isEmpty()){
+            return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        
+        /*HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/user/").buildAndExpand(user.getId()).toUri());*/
+        return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+    }
   
 }

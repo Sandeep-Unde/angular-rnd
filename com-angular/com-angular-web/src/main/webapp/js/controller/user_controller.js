@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('UserController', ['$scope', 'UserService', function($scope, UserService) {
+angular.module('myApp').controller('UserController', ['$scope', 'UserService',  function($scope, UserService) {
     var self = this;
     self.user={id:null,username:'',address:'',email:''};
     self.users=[];
@@ -9,9 +9,14 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     self.edit = edit;
     self.remove = remove;
     self.reset = reset;
+    self.listUser = listUser;
 
 
     fetchAllUsers();
+    
+    function listUser(){
+    	UserService.userList();
+    }
 
     function fetchAllUsers(){
         UserService.fetchAllUsers()
