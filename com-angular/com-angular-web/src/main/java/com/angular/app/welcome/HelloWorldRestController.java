@@ -131,9 +131,19 @@ public class HelloWorldRestController {
             return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
         
-        /*HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/user/").buildAndExpand(user.getId()).toUri());*/
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+    }
+    
+    
+    @RequestMapping(value = "/updateUsers/", method = RequestMethod.POST)
+    public ResponseEntity<Void> updateUser(@RequestBody List<User> userList,    UriComponentsBuilder ucBuilder) {
+        System.out.println("User Count" + userList.size());
+        
+        userService.updateUsers(userList);
+  
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/user/").buildAndExpand().toUri());
+        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
   
 }

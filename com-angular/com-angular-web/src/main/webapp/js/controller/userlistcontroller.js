@@ -5,12 +5,9 @@ angular.module('myApp').controller('UserListController', ['$scope', 'UserListSer
     self.user={id:null,username:'',address:'',email:''};
     self.users=[];
 
-   /* self.submit = submit;
-    self.edit = edit;
-    self.remove = remove;
-    self.reset = reset;*/
     self.toHome = toHome;
-
+    self.update = update;
+    $scope.users;
 
     fetchAllUsers();
 
@@ -27,10 +24,12 @@ angular.module('myApp').controller('UserListController', ['$scope', 'UserListSer
     }
     
     function toHome(){
-    	alert('going home');
     	UserListService.toHome();
     }
-
-   
+    
+    function update(){
+    	var updateUserList = $scope.ctrl.users;
+    	UserListService.updateUser(updateUserList);
+    }
 
 }]);

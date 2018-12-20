@@ -1,24 +1,9 @@
   <head>  
     <title>AngularJS $http Example</title>  
     <style>
-      .username.ng-valid {
-          background-color: lightgreen;
-      }
-      .username.ng-dirty.ng-invalid-required {
-          background-color: red;
-      }
-      .username.ng-dirty.ng-invalid-minlength {
-          background-color: yellow;
-      }
-
-      .email.ng-valid {
-          background-color: lightgreen;
-      }
-      .email.ng-dirty.ng-invalid-required {
-          background-color: red;
-      }
-      .email.ng-dirty.ng-invalid-email {
-          background-color: yellow;
+            
+      input {
+      border: none;
       }
 
     </style>
@@ -44,23 +29,23 @@
                       <tbody>
                           <tr ng-repeat="u in ctrl.users">
                               <td><span ng-bind="u.id"></span></td>
-                              <td><span ng-bind="u.username"></span></td>
-                              <td><span ng-bind="u.address"></span></td>
-                              <td><span ng-bind="u.email"></span></td>
+                              <td><input type="text" ng-model="u.username"/></td>
+                              <td><input type="text" ng-model="u.address"/></td>
+                              <td><input type="email" ng-model="u.email"/></td>
                           </tr>
                       </tbody>
                   </table>
               </div>
           </div>
-      </div>
+      
 	<div class="row">
-		<div class="form-actions floatRight" ng-controller="UserListController as controller">
-			<button type="button" ng-click="controller.toHome()"
+		<div class="form-actions floatRight" >
+			<button type="button"   class="btn btn-primary btn-sm" ng-click="ctrl.update()" >Update</button>
+			<button type="button" ng-click="ctrl.toHome()"
 				class="btn btn-warning btn-sm" >Back</button>
 		</div>
 	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+</div>
       <script src="<c:url value='/js/app.js' />"></script>
       <script src="<c:url value='/js/service/user_service.js' />"></script>
       <script src="<c:url value='/js/controller/user_controller.js' />"></script>

@@ -79,37 +79,9 @@
                   </form>
               </div>
           </div>
-          <<!-- div class="panel panel-default">
-                Default panel contents
-              <div class="panel-heading"><span class="lead">List of Users </span></div>
-              <div class="tablecontainer">
-                  <table class="table table-hover">
-                      <thead>
-                          <tr>
-                              <th>ID.</th>
-                              <th>Name</th>
-                              <th>Address</th>
-                              <th>Email</th>
-                              <th width="20%"></th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="u in ctrl.users">
-                              <td><span ng-bind="u.id"></span></td>
-                              <td><span ng-bind="u.username"></span></td>
-                              <td><span ng-bind="u.address"></span></td>
-                              <td><span ng-bind="u.email"></span></td>
-                              <td>
-                              <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button>  <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div> -->
       </div>
       
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+     
       <script src="<c:url value='/js/app.js' />"></script>
       <script src="<c:url value='/js/service/user_service.js' />"></script>
       <script src="<c:url value='/js/controller/user_controller.js' />"></script>
