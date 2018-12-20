@@ -78,5 +78,11 @@ public class UserServiceImpl implements UserService{
         users.add(new User(counter.incrementAndGet(),"Kelly", "NEBRASKA", "kelly@abc.com"));
         return users;
     }
+
+	@Override
+	public void updateUsers(List<User> userList) {
+		users = userList;
+		
+	}
  
 }

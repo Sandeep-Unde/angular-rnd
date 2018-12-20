@@ -24,5 +24,7 @@ public interface UserService {
     void deleteAllUsers();
      
     public boolean isUserExist(User user);
+    
+    void updateUsers(List<User> userList);
      
 }
