@@ -1,16 +1,4 @@
-  <head>  
-    <title>AngularJS $http Example</title>  
-    <style>
-            
-      input {
-      border: none;
-      }
-
-    </style>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-     <link href="<c:url value='/css/app.css' />" rel="stylesheet"></link>
-  </head>
-  <body ng-app="myApp" class="ng-cloak" >
+  <div ng-app="myApp" class="ng-cloak" >
       <div class="generic-container" ng-controller="UserListController as ctrl">
           
           <div class="panel panel-default" onload="ctrl.fetchAllUsers()">
@@ -51,4 +39,4 @@
       <script src="<c:url value='/js/controller/user_controller.js' />"></script>
       <script src="<c:url value='/js/controller/userlistcontroller.js' />"></script>
       <script src="<c:url value='/js/service/user_listservice.js' />"></script>
-  </body>
+  </div>

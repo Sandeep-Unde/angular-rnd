@@ -1,31 +1,4 @@
-  <head>  
-    <title>AngularJS $http Example</title>  
-    <style>
-      .username.ng-valid {
-          background-color: lightgreen;
-      }
-      .username.ng-dirty.ng-invalid-required {
-          background-color: red;
-      }
-      .username.ng-dirty.ng-invalid-minlength {
-          background-color: yellow;
-      }
-
-      .email.ng-valid {
-          background-color: lightgreen;
-      }
-      .email.ng-dirty.ng-invalid-required {
-          background-color: red;
-      }
-      .email.ng-dirty.ng-invalid-email {
-          background-color: yellow;
-      }
-
-    </style>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-     <link href="<c:url value='/css/app.css' />" rel="stylesheet"></link>
-  </head>
-  <body ng-app="myApp" class="ng-cloak">
+  <div ng-app="myApp" class="ng-cloak">
       <div class="generic-container" ng-controller="UserController as ctrl">
           <div class="panel panel-default">
               <div class="panel-heading"><span class="lead">User Registration Form </span></div>
@@ -85,4 +58,4 @@
       <script src="<c:url value='/js/app.js' />"></script>
       <script src="<c:url value='/js/service/user_service.js' />"></script>
       <script src="<c:url value='/js/controller/user_controller.js' />"></script>
-  </body>
+  </div>

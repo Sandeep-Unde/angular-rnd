@@ -2,7 +2,14 @@
 
 angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $q){
 
-    var REST_SERVICE_URI = 'http://localhost:8080/com-angular-web/user/';
+    
+	var APP_USER_SERVICE = '';
+	var APP_USER_LIST_SERVICE = '';
+	
+	 $http.get('connection.properties').then(function (response) {
+		 APP_USER_SERVICE =  response.data.APP_USER_SERVICE;
+		 APP_USER_LIST_SERVICE =  response.data.APP_USER_LIST_SERVICE;
+	      });
 
     var factory = {
         fetchAllUsers: fetchAllUsers,
@@ -16,7 +23,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function fetchAllUsers() {
         var deferred = $q.defer();
-        $http.get(REST_SERVICE_URI)
+        $http.get(APP_USER_SERVICE)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -31,7 +38,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function createUser(user) {
         var deferred = $q.defer();
-        $http.post(REST_SERVICE_URI, user)
+        $http.post(APP_USER_SERVICE, user)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -47,7 +54,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function updateUser(user, id) {
         var deferred = $q.defer();
-        $http.put(REST_SERVICE_URI+id, user)
+        $http.put(APP_USER_SERVICE+id, user)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -62,7 +69,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
 
     function deleteUser(id) {
         var deferred = $q.defer();
-        $http.delete(REST_SERVICE_URI+id)
+        $http.delete(APP_USER_SERVICE+id)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -76,7 +83,7 @@ angular.module('myApp').factory('UserService', ['$http', '$q', function($http, $
     }
     
     function userList(){
-    	window.location.href = 'http://localhost:8080/com-angular-web/list';
+    	window.location.href = APP_USER_LIST_SERVICE;
     }
 
 }]);

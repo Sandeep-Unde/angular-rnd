@@ -1,15 +1,18 @@
 'use strict';
 
-var app = angular.module('myApp').factory('UserListService', ['$http', '$q','$window', 'UserService', function($http, $q,window, UserService){
+var app = angular.module('myApp').factory('UserListService', ['$http', '$q','$window',  function($http, $q,window){
 	
 	
-	var APP_HOME_URI = 'http://localhost:8080/com-angular-web/';
-	var REST_SERVICE_URI = 'http://localhost:8080/com-angular-web/userList/';
+	var APP_HOME_URI = '';
+	
+	 $http.get('connection.properties').then(function (response) {
+		 APP_HOME_URI = response.data.APP_HOME_URI;
+	      });
 
     var factory = {
         fetchAllUsers: fetchAllUsers,
         toHome : toHome,
-        updateUser,updateUser,
+        updateUser : updateUser,
     };
 
     return factory;
@@ -31,8 +34,9 @@ var app = angular.module('myApp').factory('UserListService', ['$http', '$q','$wi
     }
     
     function toHome(){
+    	alert(APP_HOME_URI);
     	window.location.href = APP_HOME_URI;
-    	UserService.fetchAllUsers();
+    	//UserService.fetchAllUsers();
     }
     
     function updateUser(userList){

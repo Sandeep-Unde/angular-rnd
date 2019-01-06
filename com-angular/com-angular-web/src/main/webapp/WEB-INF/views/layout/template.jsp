@@ -11,6 +11,34 @@
 </c:set>
 <title><spring:message code="${titleKey}" text="com-angular" /></title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/app/css/styles.css">
+<style>
+           .username.ng-valid {
+          background-color: lightgreen;
+      }
+      .username.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .username.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+
+      .email.ng-valid {
+          background-color: lightgreen;
+      }
+      .email.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .email.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+        
+      input {
+      border: none;
+      }
+
+    </style>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <link href="<c:url value='/css/app.css' />" rel="stylesheet"></link>
 </head>
 <body>
     <div class="container">
