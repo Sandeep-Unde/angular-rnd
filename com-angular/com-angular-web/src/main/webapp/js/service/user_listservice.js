@@ -34,9 +34,7 @@ var app = angular.module('myApp').factory('UserListService', ['$http', '$q','$wi
     }
     
     function toHome(){
-    	alert(APP_HOME_URI);
     	window.location.href = APP_HOME_URI;
-    	//UserService.fetchAllUsers();
     }
     
     function updateUser(userList){
